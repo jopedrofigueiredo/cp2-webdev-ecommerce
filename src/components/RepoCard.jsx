@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function RepoCard({ name, description, html_url, stargazers_count, topics =[], id}) {
+export default function RepoCard({ name, description, html_url, price, image, topics =[], id}) {
   return (
     <div className={`flex items-center justify-between border rounded-lg p-4 border-red-700 shadow hover:scale-102 transition transform duration-200`}>
       <div className="p-1.5">
         <h3 className="font-bold text-lg">{name}</h3>
         <p className="text-gray-400 mt-2">{description}</p>
-        <p className="text-sm text-white mt-1 font-bold">⭐ {stargazers_count}</p>
+        <p className="text-gray-400 mt-2">{price}</p>
+        <img src={image} alt="" />
         {topics.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-3">
             {topics.map((topic) => (
